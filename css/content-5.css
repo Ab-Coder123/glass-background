@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: rgb(9, 0, 59);
+  height: 3000px;
+}
+
+@keyframes mation {
+  50% {
+    clip-path: circle(20% at right 50%);
+  }
+
+  0%,
+  100% {
+    clip-path: circle(25% at right 60%);
+  }
+}
+
+@keyframes mation2 {
+  50% {
+    clip-path: circle(14% at left 70%);
+  }
+
+  0%,
+  100% {
+    clip-path: circle(10% at left 50%);
+  }
+}
+
+@keyframes motion3 {
+  0%,
+  100% {
+    transform: translate(20px);
+  }
+
+  50% {
+    transform: translate(-30px);
+  }
+}
+
+body::before {
+  content: " ";
+  position: absolute;
+  background: linear-gradient(rgb(9, 237, 253), rgb(51, 51, 51));
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 20px;
+  z-index: -1;
+  animation: mation 5s infinite linear;
+}
+
+body::after {
+  content: " ";
+  position: absolute;
+  background: linear-gradient(rgb(40, 40, 41), rgb(0, 235, 252));
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation: mation2 5s infinite linear;
+  z-index: -1;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(9, 0, 59);
+  text-decoration: none;
+}
+
+.mynav {
+  background:rgb(29, 238, 227) !important;
+  backdrop-filter: blur(100px) !important;
+  border: 1px wheat solid;
+  border-radius: 10px;
+
+}
+
+.my-4 .nav-link {
+  color: aqua !important;
+
+}
+
+.container {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1119px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.container .card {
+  position: relative;
+  margin: 30px;
+  width: 300px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(138, 138, 138, 0.25);
+  box-shadow: 0 0px 10px 3px rgba(252, 252, 255, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 15px;
+  border: 1px solid rgba(91, 89, 219, 0.18);
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.card .content {
+  padding: 20px 30px;
+  text-align: center;
+  transform: translateY(110px);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translate(-10px, -40px);
+}
+
+.card .content:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card .content h1 {
+  position: absolute;
+  top: -75%;
+  left: 15%;
+  color: rgb(214, 214, 214);
+  font-size: 13rem;
+  font-weight: bold;
+  opacity: 0.2;
+  text-shadow: 4px 8px 20px rgb(236, 236, 236);
+}
+
+.card .content h3 {
+  width: 100%;
+  font-size: 3rem;
+  color: rgb(9, 0, 59);
+  text-shadow: 2px 5px 10px rgb(148, 143, 143);
+}
+
+.card .content p {
+  padding: 5px;
+  font-size: 25px;
+  line-height: 29px;
+  color: rgb(194, 194, 194);
+  text-shadow: 4px 8px 20px rgb(9, 0, 59);
+  float: left;
+}
+
+.card .content a {
+  position: relative;
+  padding: 10px 30px;
+  color: rgb(9, 0, 59);
+  background-color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.4s;
+  top: 30px;
+}
+
+.card .content a:valid,
+.card .content a:focus {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+.card .content a::after {
+  content: " ";
+  position: absolute;
+  width: 90%;
+  height: 3px;
+  left: 7px;
+  bottom: 0;
+  border-radius: 20px;
+  transform: translateY(0.2px);
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.card .content a:valid::after,
+.card .content a:focus::after {
+  width: 100%;
+  height: 3px;
+  left: 0;
+  background-color: rgb(9, 0, 59);
+  height: 50px;
+  box-shadow: 0 0px 10px 3px rgba(252, 252, 255, 0.37);
+  border-radius: 20px;
+  transform: translateY(0px);
+  z-index: -1;
+}
+
+/* ***********************************************************/
+.singin-login {
+  position: relative;
+  padding-top: 70px;
+}
+
+.singin-login .container {
+  position: relative;
+  width: 50%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(138, 138, 138, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .singin-login .container {
+    width: 80%;
+    margin-left: 3rem;
+  }
+}
+
+.singin-login::after {
+  content: " ";
+  position: absolute;
+  background: linear-gradient(rgb(88, 88, 88), rgb(0, 149, 207));
+  width: 75%;
+  height: 75%;
+  left: 0px;
+  top: 125px;
+  z-index: -1;
+  animation: mation 5s infinite linear;
+}
+
+.container h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  text-shadow: 2px 5px 10px rgb(148, 143, 143);
+}
+
+.content {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.content span {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  text-shadow: 2px 5px 10px rgb(148, 143, 143);
+  font-size: 1.1rem;
+  color: rgb(197, 197, 197);
+  left: -8px;
+}
+
+.content input {
+  border: none;
+  background: transparent;
+  outline: 0px;
+}
+
+.content input:valid ~ span .content input:focus ~ span {
+  transform: translateY(-36px);
+}
+
+.content i {
+  position: absolute;
+  background: aqua;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.container input:focus ~ i {
+  height: 40px;
+  transition: 0.4s;
+}
+
+.container input:not(:focus) {
+  color: aquamarine;
+}
+
+.container .signbox {
+  padding: 10px 15px;
+  margin: 10px 30px;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 20px;
+  color: rgb(9, 0, 59);
+  background-color: rgb(24, 201, 233);
+  border: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.signbox:hover,
+.forget:hover {
+  transform: scale(1.1);
+  color: rgb(9, 0, 59);
+}
+
+.container .forget {
+  transition: 0.4s;
+  color: white;
+  padding: 20px;
+}
+
+.container .creat {
+  padding: 10px;
+  color: aqua;
+}
+
+.error1 {
+  color: #292828;
+  transition: all 0.7s;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.error1 > i {
+  color: red;
+}
+
+.container input:not(:focus) ~ .error1 {
+  opacity: 0;
+}
+
+.error2 {
+  margin-top: 10px;
+  color: #292828;
+  transition: all 0.7s;
+  text-align: center;
+  padding: 5px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  opacity: 0;
+}
+.error2 > i {
+  padding-right: 5px;
+  color: red;
+}
