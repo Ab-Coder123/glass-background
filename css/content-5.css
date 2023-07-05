@@ -33,6 +33,7 @@ body {
   100% {
     clip-path: circle(10% at left 50%);
   }
+  
 }
 
 @keyframes motion3 {
